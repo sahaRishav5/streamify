@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Cascadia Code", monospace;
+  scrollbar-width: none;
+
+}
+
+.str-chat__channel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #04020e, #098857);
+  height: 100%;
+  padding: 20px;
+}
+
+.str-chat__container {
+  max-width: 1200px;
+  width: 100%;
+  height: 100% !important;
+  margin-bottom: 0 !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  
+}
+
+.str-chat__list {
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+.str-chat__list-notifications {
+  display: none;
+}
+
+.str-chat__message-input {
+  border-top: 1px solid rgb(184, 182, 182);
+}
+.str-chat__channel-header
+{
+  border-bottom: 1px solid #463e3e;
+}
+
+.str-chat__date-separator-line {
+  display: none !important;
+}
+.str-chat__date-separator-date {
+  display: block;
+  margin: 10px auto;
+  padding: 4px 12px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #555;
+}
