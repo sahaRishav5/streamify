@@ -8,7 +8,7 @@ import userRoutes from "./routes/user.route.js"
 import chatRoutes from "./routes/chat.route.js"
 import { connectDB } from "./lib/db.js";
 
-const PORT=process.env.PORT;
+const PORT=process.env.PORT || 5000;
 const FRONTEND_URL=process.env.FRONTEND_URL;
 const app = express();
 
