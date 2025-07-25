@@ -7,8 +7,8 @@ const useSignUp = () => {
 
     const {isPending,error,mutate} = useMutation({
     mutationFn: signup,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["authUser"] });
+    onSuccess: (data) => {
+      queryClient.setQueryData(["authUser"], { user: data.user });
       toast.success("Signup successful");
     },
     onError: (error) => {

@@ -9,21 +9,6 @@ const SignUpPage = () => {
     password: "",
   });
 
-  /* const {
-    mutate: signupMutation,
-    isPending,
-    error,
-  } = useMutation({
-    mutationFn: signup,
-    onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["authUser"] });
-      toast.success("Signup successful");
-    },
-    onError: (error) => {
-      console.error("Signup error:", error);
-      toast.error(error.response?.data?.message || "Signup failed");
-    },
-  });*/
 
   const { signupMutation, isPending, error } = useSignUp();
 
