@@ -20,7 +20,7 @@ const App = () => {
 
   if (isLoading) return <PageLoader />;
   return (
-    <div className="min-h-screen w-full" data-theme={theme}>
+    <div className="min-h-[100dvh] w-full " data-theme={theme}>
       <Routes>
         <Route
           path="/"
