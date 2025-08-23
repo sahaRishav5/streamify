@@ -42,8 +42,8 @@ const Sidebar = () => {
       </nav>
 
       {/* USER PROFILE SECTION */}
-      <div className="flex  items-end p-4 border-t border-base-300 flex-1">
-        <div className="flex items-center gap-3">
+       <div className="flex items-end p-4 border-t border-base-300 flex-1">
+        <Link to="/update-profile" className="flex items-center gap-3 cursor-pointer w-full">
           <div className="avatar">
             <div className="w-10 rounded-full">
               <img src={authUser?.profilePic} alt="User Avatar" />
@@ -56,7 +56,7 @@ const Sidebar = () => {
               Online
             </p>
           </div>
-        </div>
+        </Link>
       </div>
     </aside>
   );

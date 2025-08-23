@@ -22,6 +22,14 @@ export const getAuthUser = async () => {
     return null;
   }
 };
+export const updateProfile = async (profileData) => {
+  try {
+    const { data } = await axiosInstance.put("/users/update-profile", profileData);
+    return data; // will return { user: updatedUser }
+  } catch (error) {
+    throw error; // react-query will handle it in onError
+  }
+};
 
 export const completeOnboarding = async (onboardingData) => {
   const { data } = await axiosInstance.post("/auth/onboarding", onboardingData);

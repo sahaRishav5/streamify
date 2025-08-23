@@ -6,6 +6,7 @@ import OnboardingPage from "./pages/OnboardingPage";
 import ChatPage from "./pages/ChatPage";
 import CallPage from "./pages/CallPage";
 import NotificationsPage from "./pages/NotificationsPage";
+import UpdateProfilePage from "./pages/UpdateProfilePage";
 import LoginPage from "./pages/LoginPage";
 import { Toaster } from "react-hot-toast";
 import PageLoader from "./components/PageLoader";
@@ -99,6 +100,19 @@ const App = () => {
               )
             ) : (
               <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/update-profile" // ✅ new route
+          element={
+            isAuthenticated && isOnboardingComplete ? (
+              <Layout showSidebar={true}>
+                <UpdateProfilePage />
+              </Layout>
+              
+            ) : (
+              <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
             )
           }
         />

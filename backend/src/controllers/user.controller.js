@@ -146,3 +146,23 @@ export async function getOutgoingFriendReqs(req, res) {
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
+
+export async function updateProfile(req, res) {
+  try {
+    const { fullName, bio, nativeLanguage, learningLanguage, location, profilePic } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user._id,
+      { fullName, bio, nativeLanguage, learningLanguage, location, profilePic },
+      { new: true, }
+    ).select("-password -email -createdAt -updatedAt");
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({ user: updatedUser });
+  } catch (error) {
+    console.error("Error in updateProfile controller", error.message);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
