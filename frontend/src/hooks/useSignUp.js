@@ -10,9 +10,11 @@ const useSignUp = () => {
   const { isPending, error, mutate } = useMutation({
     mutationFn: signup,
     onSuccess: () => {
+    onSuccess: () => {
       toast.success("Signup successful");
       navigate("/login");
       
+      navigate("/login");
     },
     onError: (error) => {
       console.error("Signup error:", error);
