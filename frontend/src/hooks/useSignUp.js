@@ -9,9 +9,10 @@ const useSignUp = () => {
 
     const {isPending,error,mutate} = useMutation({
     mutationFn: signup,
-    onSuccess: (data) => {
-      queryClient.setQueryData(["authUser"], { user: data.user });
+    onSuccess: () => {
+      //queryClient.setQueryData(["authUser"], { user: data.user });
       toast.success("Signup successful");
+      navigate("/login");
       //navigate(data.user?.isOnboarded ? "/" : "/onboarding");
     },
     onError: (error) => {
