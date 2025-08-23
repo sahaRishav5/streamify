@@ -12,7 +12,7 @@ const useSignUp = () => {
     onSuccess: (data) => {
       queryClient.setQueryData(["authUser"], { user: data.user });
       toast.success("Signup successful");
-      navigate(data.user?.isOnboarded ? "/" : "/onboarding");
+      //navigate(data.user?.isOnboarded ? "/" : "/onboarding");
     },
     onError: (error) => {
       console.error("Signup error:", error);
