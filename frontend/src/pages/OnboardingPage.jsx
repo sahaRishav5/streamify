@@ -35,13 +35,6 @@ const OnboardingPage = () => {
     onboardingMutation(formState);
   };
 
-  const handleRandomAvatar = () => {
-    const idx = Math.floor(Math.random() * 100) + 1; // 1-100 included
-    const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
-
-    setFormState({ ...formState, profilePic: randomAvatar });
-    toast.success("Random profile picture generated!");
-  };
 
   return (
     <div className="min-h-screen bg-base-100 flex items-center justify-center">
@@ -66,18 +59,6 @@ const OnboardingPage = () => {
                     <CameraIcon className="size-12 text-base-content opacity-40" />
                   </div>
                 )}
-              </div>
-
-              {/* Generate Random Avatar BTN */}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={handleRandomAvatar}
-                  className="btn btn-accent"
-                >
-                  <ShuffleIcon className="size-4 mr-2" />
-                  Generate Random Avatar
-                </button>
               </div>
             </div>
 
