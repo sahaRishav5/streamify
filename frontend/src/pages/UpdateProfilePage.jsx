@@ -45,12 +45,6 @@ const UpdateProfilePage = () => {
     updateMutation(formState);
   };
 
-  const handleRandomAvatar = () => {
-    const idx = Math.floor(Math.random() * 100) + 1;
-    const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
-    setFormState({ ...formState, profilePic: randomAvatar });
-    toast.success("Random profile picture generated!");
-  };
 
   return (
     <div className="bg-base-100 flex items-center justify-center">
@@ -75,15 +69,6 @@ const UpdateProfilePage = () => {
                   </div>
                 )}
               </div>
-
-              <button
-                type="button"
-                onClick={handleRandomAvatar}
-                className="btn btn-accent"
-              >
-                <ShuffleIcon className="size-4 mr-2" />
-                Generate Random Avatar
-              </button>
             </div>
 
             {/* FULL NAME */}
